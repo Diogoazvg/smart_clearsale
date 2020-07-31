@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'clearsale_clean'
+require 'smart_clearsale'
 require 'rubygems'
 require 'bundler'
 require 'vcr'
@@ -12,7 +12,7 @@ require 'simplecov'
 
 SimpleCov.start
 
-ClearsaleClean::Config.log = false
+SmartClearsale::Config.log = false
 
 VCR.configure do |c|
   c.hook_into :webmock

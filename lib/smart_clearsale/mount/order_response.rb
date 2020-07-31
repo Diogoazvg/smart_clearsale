@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ClearsaleClean
+module SmartClearsale
   module Mount
     # Response for Order
     class OrderResponse

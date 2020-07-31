@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in clearsale_clean.gemspec
+# Specify your gem's dependencies in smart_clearsale.gemspec
 gemspec
 
 gem 'rake', '~> 12.0'

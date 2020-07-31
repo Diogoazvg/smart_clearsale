@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe ClearsaleClean::Analysis::SendOrder, vcr: { cassette_name: 'send_order' } do
+RSpec.describe SmartClearsale::Analysis::SendOrder, vcr: { cassette_name: 'send_order' } do
   describe '#send_order' do
-    let(:connector) { ClearsaleClean::Connector.instance }
+    let(:connector) { SmartClearsale::Connector.instance }
     let(:xml_order) { double('xml') }
     let(:order) do
       {
@@ -82,12 +82,12 @@ RSpec.describe ClearsaleClean::Analysis::SendOrder, vcr: { cassette_name: 'send_
 
     context 'when mount response' do
       it 'send order for mount response' do
-        allow(ClearsaleClean::Mount::Order).to receive_message_chain('new.to_xml')
+        allow(SmartClearsale::Mount::Order).to receive_message_chain('new.to_xml')
           .with(order)
           .with(no_args)
           .and_return(xml_order)
 
-        expect(ClearsaleClean::Mount::OrderResponse).to receive(:build_from_send_order)
+        expect(SmartClearsale::Mount::OrderResponse).to receive(:build_from_send_order)
           .with(connector.do_request('SendOrders', { xml: xml_order }))
 
         described_class.new(order).send_order
@@ -96,7 +96,7 @@ RSpec.describe ClearsaleClean::Analysis::SendOrder, vcr: { cassette_name: 'send_
 
     context 'when the mount order' do
       it 'send order to mount tags' do
-        expect(ClearsaleClean::Mount::Order).to receive_message_chain('new.to_xml')
+        expect(SmartClearsale::Mount::Order).to receive_message_chain('new.to_xml')
           .with(order)
           .with(no_args)
           .and_return(xml_order)

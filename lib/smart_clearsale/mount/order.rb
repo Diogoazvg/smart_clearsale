@@ -2,7 +2,7 @@
 
 require 'builder'
 
-module ClearsaleClean
+module SmartClearsale
   module Mount
     class Order
       STATUS_TYPE_MAP = {
@@ -94,7 +94,7 @@ module ClearsaleClean
       def build_user_order(builder, user, billing_address)
         builder.tag!('ID', user[:id])
         builder.tag!('Type', 1)
-        builder.tag!('LegalDocument1', user[:cpf].gsub(/[\.\-]*/, '').strip)
+        builder.tag!('LegalDocument1', user[:cpf].gsub(/[.-]*/, '').strip)
         builder.tag!('Name', user[:full_name])
         builder.tag!('BirthDate', user[:birthdate]) if user[:birthdate].present?
         builder.tag!('Email', user[:email])
@@ -160,7 +160,7 @@ module ClearsaleClean
             b.tag!('Name', payment[:card_holder])
           end
 
-          b.tag!('LegalDocument', user[:cpf].gsub(/[\.\-]*/, '').strip)
+          b.tag!('LegalDocument', user[:cpf].gsub(/[.-]*/, '').strip)
           build_address(b, order[:billing_address])
 
           b.tag!('Currency', '986')

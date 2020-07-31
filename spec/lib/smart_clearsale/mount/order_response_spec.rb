@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe ClearsaleClean::Mount::OrderResponse do
+RSpec.describe SmartClearsale::Mount::OrderResponse do
   let(:response_send) { described_class.build_from_send_order(package_send) }
   let(:response_send_no_order) { described_class.build_from_send_order(package_send_without_order) }
   let(:response_update) { described_class.build_from_update(package_update) }

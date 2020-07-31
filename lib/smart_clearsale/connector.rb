@@ -3,7 +3,7 @@
 require 'savon'
 require 'singleton'
 
-module ClearsaleClean
+module SmartClearsale
   # Create Connector to ClearSale
   class Connector
     include Singleton
@@ -55,14 +55,15 @@ module ClearsaleClean
       end
     end
 
-    def endpoint_url_valid?(env)
-      env.eql?('homolog') || env.eql?('production')
+    def endpoint_url
+      env = ENV.fetch('CLEARSALE_ENV', :homolog)
+      return :homolog unless endpoint_url_valid?(env)
+
+      env.to_sym
     end
 
-    def endpoint_url
-      return :homolog unless endpoint_url_valid?(ENV.fetch('CLEARSALE_ENV'))
-
-      ENV.fetch('CLEARSALE_ENV').to_sym
+    def endpoint_url_valid?(env)
+      env.eql?('homolog') || env.eql?('production')
     end
 
     def extract_response_xml(method, response)

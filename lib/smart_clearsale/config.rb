@@ -2,7 +2,7 @@
 
 require 'active_support/all'
 
-module ClearsaleClean
+module SmartClearsale
   # config class
   class Config
     mattr_accessor :logger, :log

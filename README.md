@@ -1,4 +1,4 @@
-# ClearsaleClean
+# SmartClearsale
 
 Gem based on the https://github.com/Baby-com-br/clearsale gem, my thanks to Daniel Konishi.
 
@@ -9,7 +9,7 @@ Gem for send and checking orders at ClearSale.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'clearsale_clean'
+gem 'smart_clearsale'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install clearsale_clean
+    $ gem install smart_clearsale
 
 ## Usage
 
@@ -120,7 +120,7 @@ order = {
 
 Requesting analysis
 ```ruby
-  response = ClearsaleClean::Analysis::SendOrder.new(order).send_order
+  response = SmartClearsale::Analysis::SendOrder.new(order).send_order
   response
   # => {:order_id=>1235, :score=>0.0, :status=>:waiting}
   # => {:status=>:order_not_accepted, :message=>"Pedido 1234 já existe e não está como reanalise."}
@@ -128,7 +128,7 @@ Requesting analysis
 Consulting the analysis
 ```ruby
   order_id = '1234'
-  response = ClearsaleClean::Analysis::GetOrder.new(order_id).order_status
+  response = SmartClearsale::Analysis::GetOrder.new(order_id).order_status
 
   response
   # {:order_id=>1234, :score=>0.0, :status=>:manual_analysis}
@@ -158,9 +158,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/repassa/clearsale_clean. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/repassa/clearsale_clean/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/repassa/smart_clearsale. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/repassa/smart_clearsale/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## Code of Conduct
 
-Everyone interacting in the ClearsaleClean project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/repassa/clearsale_clean/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the SmartClearsale project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/repassa/smart_clearsale/blob/master/CODE_OF_CONDUCT.md).

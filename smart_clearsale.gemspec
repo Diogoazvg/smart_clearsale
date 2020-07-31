@@ -2,11 +2,11 @@
 
 $LOAD_PATH.push File.expand_path('lib', __dir__)
 
-require_relative 'lib/clearsale_clean/version'
+require_relative 'lib/smart_clearsale/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'clearsale_clean'
-  spec.version       = ClearsaleClean::VERSION
+  spec.name          = 'smart_clearsale'
+  spec.version       = SmartClearsale::VERSION
   spec.authors       = ['Diogo Gouveia', 'Augusto C S Martins']
   spec.email         = ['diogo.gouveia@repassa.com.br', 'augusto@repassa.com.br']
   spec.summary       = 'Gem clean for Clearsale'

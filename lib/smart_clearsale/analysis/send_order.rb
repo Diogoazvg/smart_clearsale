@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ClearsaleClean
+module SmartClearsale
   # Module for Analisys
   module Analysis
     # Send order for Analysis

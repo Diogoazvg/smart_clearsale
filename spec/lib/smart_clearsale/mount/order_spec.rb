@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe ClearsaleClean::Mount::Order do
+RSpec.describe SmartClearsale::Mount::Order do
   describe '#to_xml' do
     subject(:mount_order) { described_class.new(order) }
 
